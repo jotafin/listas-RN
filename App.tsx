@@ -1,18 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, StatusBar, Text, View, FlatList } from 'react-native';
+import { UserItem } from './components/user-item';
 
+type User = {
+  id: number;
+  name: string;
+  idade: number;
+}
 export default function App() {
+  const list: User[] = [
+    {id: 1, name: "joao", idade: 20},
+    {id: 2, name: "Maria", idade: 39},
+    {id: 3, name: "Lucia", idade: 40},
+    {id: 4, name: "Ronaldo", idade: 90},
+  ]
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <StatusBar />
+      <FlatList
+        data={list}
+        renderItem={({item}) => (<UserItem id={item.id} name={item.name} idade={item.idade}/>)}
+        keyExtractor={item => item.id.toString()}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 502,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
