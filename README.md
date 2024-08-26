@@ -33,10 +33,10 @@ Para começar a usar este projeto, siga as instruções abaixo:
 
 3. **Instale as dependências**:
 
-  ```bash
-  npm install
-  # ou
-  yarn install
+     ```bash
+     npm install
+     # ou
+     yarn install
 
 4. **Execute o projeto**:
 
