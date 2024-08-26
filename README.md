@@ -40,5 +40,5 @@ Para começar a usar este projeto, siga as instruções abaixo:
 
 4. **Execute o projeto**:
 
-  ```bash
-  npx expo start
+     ```bash
+     npx expo start
